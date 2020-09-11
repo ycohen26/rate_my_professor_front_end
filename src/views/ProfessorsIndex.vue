@@ -2,13 +2,15 @@
   <div class="professors-index">
     <h1>Professors</h1>
     <div v-for="professor in professors">
-      <h2>{{ professor.name }}</h2>
-      <h3>{{ professor.school }}</h3>
-      <h3>
-        <button v-on:click="`/professors/${professor.id}`">
-          Click here for more information
-        </button>
-      </h3>
+      <figure>
+        <h1>{{ professor.name }}</h1>
+        <h3>{{ professor.school }}</h3>
+        <h3>
+          <router-link v-bind:to="`/professors/${professor.id}`"
+            >See More Information</router-link
+          >
+        </h3>
+      </figure>
     </div>
   </div>
 </template>
