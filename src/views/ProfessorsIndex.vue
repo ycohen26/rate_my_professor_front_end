@@ -1,16 +1,19 @@
 <template>
-  <div class="professor">
+  <div class="professors-index">
     <h1>Professors</h1>
     <div v-for="professor in professors">
       <h2>{{ professor.name }}</h2>
-      <h3>{{professor.school}}</h3>
-      <h3><button v-on:click="`/professors/${professor.id}`">Click here for more information</button></h3>
+      <h3>{{ professor.school }}</h3>
+      <h3>
+        <button v-on:click="`/professors/${professor.id}`">
+          Click here for more information
+        </button>
+      </h3>
     </div>
   </div>
 </template>
 
-<style>
-</style>
+<style></style>
 
 <script>
 import axios from "axios";
@@ -21,14 +24,11 @@ export default {
     };
   },
   created: function() {
-    this.indexProfessors();
+    axios.get("/professors").then((response) => {
+      console.log("All Professors:", response.data);
+      this.professors = response.data;
+    });
   },
-  methods: {
-    indexProfessors: function() {
-      axios.get("/api/professor").then(response => {
-        console.log("All professors", response);
-        this.professors = response.data;
-      });
-    },
-  },
+  methods: {},
 };
+</script>
