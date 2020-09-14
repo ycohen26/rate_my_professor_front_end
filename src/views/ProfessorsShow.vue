@@ -1,10 +1,10 @@
 <template>
   <div class="professors-show">
     <h1>Professor Information</h1>
-    <!-- <h2>{{professor.name}}</h2>  -->
-    <!-- <h3>{{ professor.title }}</h3>
+    <h2>{{ professor.name }}</h2>
+    <h3>{{ professor.title }}</h3>
     <h3>{{ professor.school }}</h3>
-    <h3>{{ professor.department }}</h3> -->
+    <h3>{{ professor.department }}</h3>
 
     <div class="modal-body">
       <form v-on:submit.prevent="editProfessor()">
