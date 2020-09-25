@@ -1,12 +1,12 @@
 <template>
   <div class="professors-show">
     <h1>Professor Information</h1>
-    <h2>{{ professor.name }}</h2>
-    <h3>{{ professor.title }}</h3>
-    <h3>{{ professor.school }}</h3>
-    <h3>{{ professor.department }}</h3>
+    <h2>Name: {{ professor.name }}</h2>
+    <h3>Title: {{ professor.title }}</h3>
+    <h3>School: {{ professor.school }}</h3>
+    <h3>Department: {{ professor.department }}</h3>
 
-    <div class="modal-body">
+    <!-- <div class="modal-body">
       <form v-on:submit.prevent="editProfessor()">
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
@@ -33,7 +33,7 @@
         </div>
         <input type="submit" class="btn btn-primary" value="Update" />
       </form>
-    </div>
+    </div> -->
     <button
       type="submit"
       class="btn btn-custom"
@@ -46,7 +46,6 @@
 
 <script>
 import axios from "axios";
-
 export default {
   data: function() {
     return {
